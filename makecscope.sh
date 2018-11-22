@@ -10,6 +10,6 @@ elif [ $# -eq 1 ]
     INPUT_DIR=$1
 fi
 
-find ${INPUT_DIR} \( -name '*.c' -o -name '*.cpp' -o -name '*.cc' -o -name '*.h' -o -name '*.s' -o -name '*.S' \) -print >> cscope.files
+find -L ${INPUT_DIR} \( -name '*.c' -o -name '*.cpp' -o -name '*.cc' -o -name '*.h' -o -name '*.s' -o -name '*.S' \) -print >> cscope.files
 cscope -i cscope.files
 
